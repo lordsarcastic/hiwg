@@ -14,6 +14,7 @@
       class="inline-flex items-center gap-3 rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
       href="#top"
       aria-label="Healthcare Interoperability Working Group home"
+      (click)="trackNavigation('logo', 'top')"
     >
       <img
         class="size-11 rounded-[0.8rem] shadow-[3px_3px_0_#ff846d]"
@@ -29,18 +30,21 @@
       <a
         class="text-sm font-semibold text-white/70 transition hover:text-white focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
         href="#problem"
+        (click)="trackNavigation('the_problem', 'problem')"
       >
         The problem
       </a>
       <a
         class="text-sm font-semibold text-white/70 transition hover:text-white focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
         href="#research"
+        (click)="trackNavigation('the_research', 'research')"
       >
         The research
       </a>
       <a
         class="text-sm font-semibold text-white/70 transition hover:text-white focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
         href="#participate"
+        (click)="trackNavigation('participate', 'participate')"
       >
         Participate
       </a>
@@ -49,6 +53,7 @@
     <a
       class="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-black text-[#17161b] transition hover:bg-[#ffb29f] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
       href="#participate"
+      (click)="trackCallToAction('add_your_voice', 'participate')"
     >
       Add your voice
     </a>
@@ -99,6 +104,7 @@
             <a
               class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#17161b] px-6 font-black text-white transition hover:-translate-y-0.5 hover:bg-[#29272f] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
               href="#participate"
+              (click)="trackCallToAction('share_your_experience', 'participate')"
             >
               Share your experience
               <span aria-hidden="true">↗</span>
@@ -106,6 +112,7 @@
             <a
               class="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-white/50 px-6 font-bold transition hover:border-white hover:bg-white hover:text-[#4b43ff] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
               href="#research"
+              (click)="trackCallToAction('explore_the_research', 'research')"
             >
               Explore the research
             </a>
@@ -118,7 +125,10 @@
           class="absolute left-[10%] right-[10%] top-[4.25rem] hidden border-t-2 border-dashed border-white/35 lg:block"
           aria-hidden="true"
         ></div>
-        <ol class="relative grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="A treatment request journey">
+        <ol
+          class="relative grid grid-cols-2 gap-3 lg:grid-cols-4"
+          aria-label="A treatment request journey"
+        >
           @for (step of requestJourney; track step.title) {
             <li
               class="rounded-2xl border border-white/20 p-4 backdrop-blur-sm sm:p-5"
@@ -275,6 +285,7 @@
       <a
         class="rounded-full bg-[#4b43ff] px-6 py-3 text-base normal-case transition hover:bg-[#ff846d] hover:text-[#17161b] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
         href="#participate"
+        (click)="trackCallToAction('marquee_invitation', 'participate')"
       >
         We want to hear from you ↘
       </a>
@@ -311,6 +322,7 @@
           <details class="group border-b-2 border-[#17161b]">
             <summary
               class="grid cursor-pointer list-none items-center gap-4 py-6 focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-[#4b43ff] sm:grid-cols-[4rem_1fr_auto] sm:py-8 [&::-webkit-details-marker]:hidden"
+              (click)="trackResearchLens(lens.number, lens.title)"
             >
               <span class="font-mono text-sm font-black text-[#4b43ff]">{{ lens.number }}</span>
               <div>
@@ -408,6 +420,7 @@
           <a
             class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#8ce8dc] px-6 font-black text-[#17161b] transition hover:bg-white focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
             href="mailto:adeoti.15.jude@gmail.com?subject=HIWG%20Research%20Participation"
+            (click)="trackContact('email', 'participation_panel')"
           >
             Email the working group
             <span aria-hidden="true">↗</span>
@@ -417,6 +430,7 @@
             href="https://wa.me/2348117408475"
             target="_blank"
             rel="noopener"
+            (click)="trackContact('whatsapp', 'participation_panel')"
           >
             WhatsApp
             <span class="sr-only">(opens in a new tab)</span>
@@ -434,6 +448,48 @@
       </ul>
     </div>
   </section>
+
+  <section
+    id="privacy"
+    class="bg-[#f6f1e8] px-5 py-14 text-[#17161b] sm:px-8 lg:px-10"
+    aria-labelledby="privacy-title"
+  >
+    <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+      <div>
+        <p class="font-mono text-xs font-black uppercase tracking-[0.18em] text-[#4b43ff]">
+          Privacy
+        </p>
+        <h2 id="privacy-title" class="mt-4 text-3xl font-black tracking-[-0.04em] sm:text-4xl">
+          Useful insight, with your choice.
+        </h2>
+      </div>
+      <div class="max-w-3xl space-y-4 leading-7 text-[#17161b]/70">
+        <p>
+          We use Google Analytics only after you choose to allow it. It helps us understand which
+          sections people visit and which calls to participate are useful. We record page visits and
+          named interactions such as navigation, research-lens, email, and WhatsApp clicks.
+        </p>
+        <p>
+          We do not deliberately send names, email addresses, message contents, or health
+          information to Analytics. Google processes the collected usage data as described in
+          <a
+            class="font-bold text-[#4b43ff] underline decoration-[#4b43ff]/30 underline-offset-4 hover:decoration-[#4b43ff] focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#4b43ff]"
+            href="https://policies.google.com/technologies/partner-sites"
+            target="_blank"
+            rel="noopener"
+          >
+            how Google uses information from sites that use its services<span class="sr-only">
+              (opens in a new tab)</span
+            > </a
+          >.
+        </p>
+        <p>
+          Your choice is stored in this browser. You can reopen the analytics choice at any time
+          from the footer.
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="bg-[#17161b] px-5 py-7 text-white/55 sm:px-8 lg:px-10">
@@ -441,13 +497,73 @@
     class="mx-auto flex max-w-7xl flex-col gap-4 text-sm sm:flex-row sm:items-center sm:justify-between"
   >
     <p>Healthcare Interoperability Working Group · Nigeria</p>
-    <a
-      class="underline decoration-white/25 underline-offset-4 transition hover:text-[#8ce8dc] focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
-      href="mailto:adeoti.15.jude@gmail.com"
-    >
-      Send an email
-    </a>
+    <div class="flex flex-wrap gap-x-5 gap-y-3">
+      <a
+        class="underline decoration-white/25 underline-offset-4 transition hover:text-[#8ce8dc] focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href="#privacy"
+        (click)="trackNavigation('privacy', 'privacy')"
+      >
+        Privacy
+      </a>
+      <button
+        class="underline decoration-white/25 underline-offset-4 transition hover:text-[#8ce8dc] focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+        type="button"
+        (click)="reviewAnalyticsConsent()"
+      >
+        Analytics preferences
+      </button>
+      <a
+        class="underline decoration-white/25 underline-offset-4 transition hover:text-[#8ce8dc] focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href="mailto:adeoti.15.jude@gmail.com"
+        (click)="trackContact('email', 'footer')"
+      >
+        Send an email
+      </a>
+    </div>
   </div>
 </footer>
+
+@if (analyticsConsent() === 'pending') {
+  <aside
+    class="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-3xl rounded-[1.5rem] border-2 border-[#17161b] bg-white p-5 text-[#17161b] shadow-[7px_7px_0_#17161b] sm:p-6"
+    role="dialog"
+    aria-labelledby="analytics-consent-title"
+    aria-describedby="analytics-consent-description"
+  >
+    <div class="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-end">
+      <div>
+        <p id="analytics-consent-title" class="text-lg font-black tracking-tight sm:text-xl">
+          Help us learn what is useful
+        </p>
+        <p id="analytics-consent-description" class="mt-2 text-sm leading-6 text-[#17161b]/65">
+          Allow privacy-conscious analytics to measure page visits and interactions. We do not
+          deliberately send personal or health information.
+          <a
+            class="font-bold text-[#4b43ff] underline underline-offset-4 focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#4b43ff]"
+            href="#privacy"
+          >
+            Read our privacy note.
+          </a>
+        </p>
+      </div>
+      <div class="flex flex-col gap-2 min-[420px]:flex-row">
+        <button
+          class="min-h-11 rounded-full border-2 border-[#17161b] px-5 text-sm font-black transition hover:bg-[#f6f1e8] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#4b43ff]"
+          type="button"
+          (click)="declineAnalytics()"
+        >
+          Not now
+        </button>
+        <button
+          class="min-h-11 rounded-full bg-[#4b43ff] px-5 text-sm font-black text-white transition hover:bg-[#17161b] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#4b43ff]"
+          type="button"
+          (click)="acceptAnalytics()"
+        >
+          Allow analytics
+        </button>
+      </div>
+    </div>
+  </aside>
+}
 
 <router-outlet />

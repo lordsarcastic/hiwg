@@ -39,3 +39,10 @@ The server exposes the application on `http://localhost:4000` and a health endpo
 Pushes to `main` publish `ghcr.io/lordsarcastic/hiwg:<package-version>` and
 `ghcr.io/lordsarcastic/hiwg:latest`. Update the version in `package.json` for every production
 release.
+
+## Analytics
+
+Google Analytics is loaded only after a visitor explicitly allows analytics. Custom events cover
+navigation, calls to action, research-lens engagement, and contact-link clicks. Event parameters
+must remain free of names, email addresses, message contents, health information, and other
+personal data.

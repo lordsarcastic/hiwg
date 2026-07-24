@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { afterNextRender, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AnalyticsService } from './analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
+  private readonly analytics = inject(AnalyticsService);
+
+  protected readonly analyticsConsent = this.analytics.consent;
+
   protected readonly requestJourney = [
     {
       title: 'Request',
@@ -117,4 +122,48 @@ export class App {
       description: 'If our assumptions are wrong, learning that is a valuable outcome.',
     },
   ];
+
+  constructor() {
+    afterNextRender(() => this.analytics.initialize());
+  }
+
+  protected trackNavigation(linkName: string, destinationSection: string): void {
+    this.analytics.track('navigation_click', {
+      link_name: linkName,
+      destination_section: destinationSection,
+    });
+  }
+
+  protected trackCallToAction(ctaName: string, destination: string): void {
+    this.analytics.track('cta_click', {
+      cta_name: ctaName,
+      destination,
+    });
+  }
+
+  protected trackResearchLens(lensNumber: string, lensTitle: string): void {
+    this.analytics.track('research_lens_toggle', {
+      lens_number: lensNumber,
+      lens_title: lensTitle,
+    });
+  }
+
+  protected trackContact(contactMethod: 'email' | 'whatsapp', linkLocation: string): void {
+    this.analytics.track('contact_click', {
+      contact_method: contactMethod,
+      link_location: linkLocation,
+    });
+  }
+
+  protected acceptAnalytics(): void {
+    this.analytics.grantConsent();
+  }
+
+  protected declineAnalytics(): void {
+    this.analytics.denyConsent();
+  }
+
+  protected reviewAnalyticsConsent(): void {
+    this.analytics.reviewConsent();
+  }
 }

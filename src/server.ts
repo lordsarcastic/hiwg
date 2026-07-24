@@ -16,6 +16,14 @@ app.get('/healthz', (_req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
+app.get('/', (_req, res) => {
+  res.sendFile(join(browserDistFolder, 'index.html'), {
+    headers: {
+      'Cache-Control': 'public, max-age=0, must-revalidate',
+    },
+  });
+});
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -45,9 +53,7 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => (response ? writeResponseToNodeResponse(response, res) : next()))
     .catch(next);
 });
 
