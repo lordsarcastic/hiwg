@@ -1,0 +1,457 @@
+<a
+  class="sr-only z-50 rounded-full bg-[#17161b] px-5 py-3 font-bold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+  href="#main-content"
+>
+  Skip to main content
+</a>
+
+<header class="absolute inset-x-0 top-0 z-40">
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10"
+    aria-label="Primary navigation"
+  >
+    <a
+      class="inline-flex items-center gap-3 rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+      href="#top"
+      aria-label="Healthcare Interoperability Working Group home"
+    >
+      <span
+        class="grid size-11 place-items-center rounded-2xl bg-[#17161b] text-white shadow-[3px_3px_0_#ff846d]"
+        aria-hidden="true"
+      >
+        <svg class="size-6" viewBox="0 0 24 24" fill="none">
+          <circle cx="6" cy="7" r="2" fill="currentColor" />
+          <circle cx="18" cy="7" r="2" fill="currentColor" />
+          <circle cx="12" cy="17" r="2" fill="currentColor" />
+          <path d="m7.8 8 3.1 7M16.2 8l-3.1 7M8 7h8" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+      </span>
+      <span class="hidden font-black tracking-[-0.02em] text-white sm:block">HIWG</span>
+    </a>
+
+    <div class="hidden items-center gap-8 lg:flex">
+      <a
+        class="text-sm font-semibold text-white/70 transition hover:text-white focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href="#problem"
+      >
+        The problem
+      </a>
+      <a
+        class="text-sm font-semibold text-white/70 transition hover:text-white focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href="#research"
+      >
+        The research
+      </a>
+      <a
+        class="text-sm font-semibold text-white/70 transition hover:text-white focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href="#participate"
+      >
+        Participate
+      </a>
+    </div>
+
+    <a
+      class="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-black text-[#17161b] transition hover:bg-[#ffb29f] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+      href="#participate"
+    >
+      Add your voice
+    </a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section
+    id="top"
+    class="relative isolate overflow-hidden bg-[#4b43ff] px-5 pb-12 pt-28 text-white sm:px-8 sm:pb-16 sm:pt-32 lg:px-10 lg:pb-20"
+    aria-labelledby="hero-title"
+  >
+    <div
+      class="absolute -right-32 -top-20 -z-10 size-[30rem] rounded-full bg-[#8ce8dc]/40 blur-3xl"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="absolute -bottom-40 -left-24 -z-10 size-[28rem] rounded-full bg-[#ff846d]/40 blur-3xl"
+      aria-hidden="true"
+    ></div>
+
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-16">
+        <div>
+          <p class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-white/65">
+            Healthcare Interoperability Working Group · Nigeria
+          </p>
+          <h1
+            id="hero-title"
+            class="mt-7 max-w-5xl text-[3.5rem] font-black leading-[0.89] tracking-[-0.065em] text-balance sm:text-7xl lg:text-[6rem]"
+          >
+            Mapping the space
+            <span
+              class="my-2 inline-block -rotate-1 rounded-[1.5rem] bg-[#ff846d] px-3 pb-2 text-[#17161b] sm:px-5"
+            >
+              between request
+            </span>
+            and decision.
+          </h1>
+        </div>
+
+        <div class="pb-2">
+          <p class="text-lg leading-8 text-white/75">
+            We’re documenting how hospitals and HMOs coordinate approvals, claims, referrals, and
+            healthcare data—before writing a practical specification for improvement.
+          </p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+            <a
+              class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#17161b] px-6 font-black text-white transition hover:-translate-y-0.5 hover:bg-[#29272f] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+              href="#participate"
+            >
+              Share your experience
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-white/50 px-6 font-bold transition hover:border-white hover:bg-white hover:text-[#4b43ff] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+              href="#research"
+            >
+              Explore the research
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mt-12 rounded-[2rem] border-2 border-white/35 bg-white/10 p-5 sm:p-7">
+        <div
+          class="absolute left-[10%] right-[10%] top-[4.25rem] hidden border-t-2 border-dashed border-white/35 lg:block"
+          aria-hidden="true"
+        ></div>
+        <ol class="relative grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="A treatment request journey">
+          @for (step of requestJourney; track step.title) {
+            <li
+              class="rounded-2xl border border-white/20 p-4 backdrop-blur-sm sm:p-5"
+              [class]="
+                $index === 2
+                  ? 'bg-[#ff846d] text-[#17161b]'
+                  : $index === 3
+                    ? 'bg-[#8ce8dc] text-[#17161b]'
+                    : 'bg-white text-[#17161b]'
+              "
+            >
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-black">0{{ $index + 1 }}</span>
+                <span class="size-3 rounded-full bg-current" aria-hidden="true"></span>
+              </div>
+              <h2 class="mt-6 text-lg font-black tracking-tight sm:mt-8 sm:text-xl">
+                {{ step.title }}
+              </h2>
+              <p class="mt-2 text-sm leading-6 opacity-70">{{ step.description }}</p>
+            </li>
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="problem"
+    class="bg-[#f6f1e8] px-5 py-16 text-[#17161b] sm:px-8 sm:py-20 lg:px-10"
+    aria-labelledby="problem-title"
+  >
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+        <div>
+          <p class="font-mono text-xs font-black uppercase tracking-[0.18em] text-[#4b43ff]">
+            01 — What we have observed
+          </p>
+          <span
+            class="mt-7 grid size-24 place-items-center rounded-full bg-[#ff846d] text-5xl"
+            aria-hidden="true"
+          >
+            ↓
+          </span>
+        </div>
+
+        <div>
+          <h2
+            id="problem-title"
+            class="max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.055em] text-balance sm:text-6xl"
+          >
+            The delay is visible.
+            <span class="text-[#4b43ff]">The cause isn’t.</span>
+          </h2>
+          <p class="mt-7 max-w-3xl text-lg leading-8 text-[#17161b]/65">
+            A treatment request can require a hospital to contact an HMO, wait, follow up
+            repeatedly, and sometimes ask the patient to intervene before a decision is
+            communicated.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-12">
+        <article
+          class="col-span-2 rounded-[2rem] border-2 border-[#17161b] bg-white p-6 shadow-[6px_6px_0_#17161b] sm:p-7 lg:col-span-5"
+        >
+          <p class="font-mono text-xs font-black uppercase tracking-[0.16em] text-[#4b43ff]">
+            What we know
+          </p>
+          <p class="mt-8 text-2xl font-black leading-tight tracking-tight sm:mt-12 sm:text-3xl">
+            Friction exists across approvals, authorisations, claims, and referrals.
+          </p>
+        </article>
+
+        <article
+          class="rounded-[2rem] border-2 border-[#17161b] bg-[#dedaff] p-5 shadow-[6px_6px_0_#17161b] sm:p-7 lg:col-span-4"
+        >
+          <p class="font-mono text-xs font-black uppercase tracking-[0.16em] text-[#4b43ff]">
+            What we don’t know
+          </p>
+          <p class="mt-8 text-lg font-black leading-tight tracking-tight sm:mt-12 sm:text-2xl">
+            Whether the root cause is process, policy, operations, technology—or something else.
+          </p>
+        </article>
+
+        <article
+          class="rounded-[2rem] border-2 border-[#17161b] bg-[#8ce8dc] p-5 shadow-[6px_6px_0_#17161b] sm:p-7 lg:col-span-3"
+        >
+          <p class="font-mono text-xs font-black uppercase tracking-[0.16em]">Why it matters</p>
+          <p class="mt-8 text-lg font-black leading-tight tracking-tight sm:mt-12 sm:text-2xl">
+            Patients should not become the follow-up system.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-[#dedaff] px-5 py-16 text-[#17161b] sm:px-8 sm:py-20 lg:px-10"
+    aria-labelledby="approach-title"
+  >
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-end">
+        <div>
+          <p class="font-mono text-xs font-black uppercase tracking-[0.18em] text-[#4b43ff]">
+            02 — How we work
+          </p>
+          <h2
+            id="approach-title"
+            class="mt-5 text-5xl font-black leading-[0.95] tracking-[-0.055em] sm:text-6xl"
+          >
+            Listen.<br />Map.<br />Specify.
+          </h2>
+        </div>
+        <p class="max-w-xl text-lg leading-8 text-[#17161b]/65 lg:justify-self-end">
+          Meaningful improvement starts with the people who work inside the system—not with a
+          predetermined product or technical answer.
+        </p>
+      </div>
+
+      <ol class="mt-12 grid gap-4 md:grid-cols-3">
+        @for (phase of phases; track phase.title) {
+          <li
+            class="group rounded-[2rem] border-2 border-[#17161b] bg-[#f6f1e8] p-5 transition motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[7px_7px_0_#4b43ff] sm:p-7"
+          >
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-sm font-black text-[#4b43ff]">0{{ $index + 1 }}</span>
+              <span
+                class="grid size-11 place-items-center rounded-full bg-[#ff846d] text-xl transition motion-safe:group-hover:rotate-12"
+                aria-hidden="true"
+              >
+                {{ $index === 0 ? '◉' : $index === 1 ? '⌘' : '✓' }}
+              </span>
+            </div>
+            <h3 class="mt-8 text-3xl font-black tracking-tight sm:mt-14">{{ phase.title }}</h3>
+            <p class="mt-4 leading-7 text-[#17161b]/60">{{ phase.description }}</p>
+          </li>
+        }
+      </ol>
+    </div>
+  </section>
+
+  <aside class="overflow-hidden bg-[#17161b] py-5 text-white" aria-label="Participation invitation">
+    <div
+      class="flex min-w-max items-center gap-8 px-5 text-2xl font-black uppercase tracking-tight sm:text-3xl"
+    >
+      <span>Healthcare</span>
+      <span class="text-[#ff846d]" aria-hidden="true">●</span>
+      <span>Insurance</span>
+      <span class="text-[#8ce8dc]" aria-hidden="true">●</span>
+      <span>Policy</span>
+      <span class="text-[#ff846d]" aria-hidden="true">●</span>
+      <span>Technology</span>
+      <span class="text-[#8ce8dc]" aria-hidden="true">●</span>
+      <a
+        class="rounded-full bg-[#4b43ff] px-6 py-3 text-base normal-case transition hover:bg-[#ff846d] hover:text-[#17161b] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+        href="#participate"
+      >
+        We want to hear from you ↘
+      </a>
+    </div>
+  </aside>
+
+  <section
+    id="research"
+    class="bg-white px-5 py-16 text-[#17161b] sm:px-8 sm:py-20 lg:px-10"
+    aria-labelledby="research-title"
+  >
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div>
+          <p class="font-mono text-xs font-black uppercase tracking-[0.18em] text-[#4b43ff]">
+            03 — Research map
+          </p>
+          <h2
+            id="research-title"
+            class="mt-5 text-4xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl"
+          >
+            Four lenses.<br />
+            Seven questions.
+          </h2>
+        </div>
+        <p class="max-w-xl text-lg leading-8 text-[#17161b]/60 lg:justify-self-end">
+          Each lens helps us move from an observed delay to a clearer picture of the full system.
+          Open one to see the questions guiding our work.
+        </p>
+      </div>
+
+      <div class="mt-12 border-t-2 border-[#17161b]">
+        @for (lens of researchLenses; track lens.number) {
+          <details class="group border-b-2 border-[#17161b]">
+            <summary
+              class="grid cursor-pointer list-none items-center gap-4 py-6 focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-[#4b43ff] sm:grid-cols-[4rem_1fr_auto] sm:py-8 [&::-webkit-details-marker]:hidden"
+            >
+              <span class="font-mono text-sm font-black text-[#4b43ff]">{{ lens.number }}</span>
+              <div>
+                <h3 class="text-2xl font-black tracking-tight sm:text-3xl">{{ lens.title }}</h3>
+                <p class="mt-1 text-[#17161b]/55">{{ lens.summary }}</p>
+              </div>
+              <span
+                class="col-start-2 grid size-11 place-items-center rounded-full bg-[#dedaff] text-2xl transition group-open:rotate-45 group-open:bg-[#ff846d] sm:col-start-auto"
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </summary>
+            <ul class="grid gap-3 pb-7 pl-0 sm:pl-20">
+              @for (question of lens.questions; track question) {
+                <li class="flex max-w-3xl gap-4 text-lg leading-8 text-[#17161b]/70">
+                  <span class="mt-3 size-2 shrink-0 rounded-full bg-[#4b43ff]" aria-hidden="true">
+                  </span>
+                  {{ question }}
+                </li>
+              }
+            </ul>
+          </details>
+        }
+      </div>
+
+      <div class="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <p class="font-mono text-xs font-black uppercase tracking-[0.16em] text-[#17161b]/45">
+          What this could inform
+        </p>
+        <ul class="flex flex-wrap gap-2">
+          <li class="rounded-full bg-[#dedaff] px-4 py-2 text-sm font-bold">Standards</li>
+          <li class="rounded-full bg-[#ffb29f] px-4 py-2 text-sm font-bold">Specifications</li>
+          <li class="rounded-full bg-[#8ce8dc] px-4 py-2 text-sm font-bold">
+            Process improvements
+          </li>
+          <li class="rounded-full bg-[#f6f1e8] px-4 py-2 text-sm font-bold">
+            Policy recommendations
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="participate"
+    class="bg-[#ff846d] px-5 py-16 text-[#17161b] sm:px-8 sm:py-20 lg:px-10"
+    aria-labelledby="participate-title"
+  >
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+        <div>
+          <p class="font-mono text-xs font-black uppercase tracking-[0.18em]">
+            04 — Add your experience
+          </p>
+          <h2
+            id="participate-title"
+            class="mt-5 max-w-3xl text-5xl font-black leading-[0.92] tracking-[-0.06em] text-balance sm:text-7xl"
+          >
+            The system already has experts.
+            <span class="text-white">We want to listen.</span>
+          </h2>
+          <p class="mt-7 max-w-xl text-lg leading-8 text-[#17161b]/70">
+            Join an interview, share a workflow or document, point us to previous efforts, or
+            introduce us to someone we should learn from.
+          </p>
+        </div>
+
+        <ul class="grid grid-cols-2 content-start gap-3">
+          @for (group of participantGroups; track group.title) {
+            <li class="rounded-3xl border-2 border-[#17161b] bg-[#f6f1e8] p-4 sm:p-5">
+              <h3 class="text-lg font-black sm:text-xl">{{ group.title }}</h3>
+              <p class="mt-2 text-xs leading-5 text-[#17161b]/60 sm:text-sm sm:leading-6">
+                {{ group.people }}
+              </p>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div
+        class="mt-12 grid overflow-hidden rounded-[2rem] border-2 border-[#17161b] bg-[#17161b] text-white lg:grid-cols-[1fr_auto]"
+      >
+        <div class="p-6 sm:p-9">
+          <p class="text-2xl font-black tracking-tight sm:text-3xl">
+            Give 30 minutes. Share a workflow. Make an introduction.
+          </p>
+          <p class="mt-3 text-white/55">
+            Every useful conversation helps us build a more accurate picture.
+          </p>
+        </div>
+        <div
+          class="flex flex-col gap-3 border-t border-white/15 p-6 sm:flex-row lg:flex-col lg:justify-center lg:border-l lg:border-t-0 lg:p-9"
+        >
+          <a
+            class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#8ce8dc] px-6 font-black text-[#17161b] transition hover:bg-white focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+            href="mailto:adeoti.15.jude@gmail.com?subject=HIWG%20Research%20Participation"
+          >
+            Email the working group
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-white/30 px-6 font-bold transition hover:border-white hover:bg-white hover:text-[#17161b] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+            href="https://wa.me/2348117408475"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+            <span class="sr-only">(opens in a new tab)</span>
+          </a>
+        </div>
+      </div>
+
+      <ul class="mt-10 grid gap-5 border-t-2 border-[#17161b] pt-7 md:grid-cols-3">
+        @for (commitment of commitments; track commitment.title) {
+          <li>
+            <h3 class="font-black">{{ commitment.title }}</h3>
+            <p class="mt-2 text-sm leading-6 text-[#17161b]/65">{{ commitment.description }}</p>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-[#17161b] px-5 py-7 text-white/55 sm:px-8 lg:px-10">
+  <div
+    class="mx-auto flex max-w-7xl flex-col gap-4 text-sm sm:flex-row sm:items-center sm:justify-between"
+  >
+    <p>Healthcare Interoperability Working Group · Nigeria</p>
+    <a
+      class="underline decoration-white/25 underline-offset-4 transition hover:text-[#8ce8dc] focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-white"
+      href="mailto:adeoti.15.jude@gmail.com"
+    >
+      Send an email
+    </a>
+  </div>
+</footer>
+
+<router-outlet />
