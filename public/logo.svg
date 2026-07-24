@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Healthcare Interoperability Working Group</title>
+  <rect width="64" height="64" rx="18" fill="#17161b"/>
+  <path
+    d="M32 14v36M14 32h36"
+    fill="none"
+    stroke="#8ce8dc"
+    stroke-linecap="round"
+    stroke-width="12"
+  />
+  <rect x="26" y="26" width="12" height="12" rx="4" fill="#ff846d"/>
+</svg>

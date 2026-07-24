@@ -24,6 +24,18 @@ describe('App', () => {
     expect(heading).toBe('Mapping the space between request and decision.');
   });
 
+  it('should render the SVG logo as a decorative brand mark', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const logo = compiled.querySelector<HTMLImageElement>('img[src="logo.svg"]');
+
+    expect(logo).not.toBeNull();
+    expect(logo?.getAttribute('alt')).toBe('');
+    expect(logo?.width).toBe(44);
+    expect(logo?.height).toBe(44);
+  });
+
   it('should provide clear participation links', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
